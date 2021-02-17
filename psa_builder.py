@@ -33,8 +33,8 @@ except ImportError as e:
 dependencies = {
     "released-tfm": {
         "trusted-firmware-m": [
-            "https://git.trustedfirmware.org/TF-M/trusted-firmware-m.git",
-            "TF-Mv1.3.0",
+            "https://github.com/ccli8/trusted-firmware-m",
+            "nuvoton_mbed_m2354_tfm-1.3",
         ],
     },
     "latest-tfm": {
