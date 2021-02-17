@@ -36,8 +36,8 @@ dependencies = {
     # Quick switch between remotes is not supported.
     "mbed-tfm": {
         "trusted-firmware-m": [
-            "https://github.com/ARMmbed/trusted-firmware-m.git",
-            "mbed-tfm-1.2",
+            "https://github.com/ccli8/trusted-firmware-m",
+            "nuvoton_mbed_m2354_tfm-1.2",
         ],
         "tf-m-tests": [
             "https://github.com/ARMmbed/tf-m-tests.git",
@@ -91,7 +91,7 @@ PSA_SUITE_CHOICES = [
 
 ROOT = abspath(dirname(__file__))
 mbed_path = join(ROOT, "mbed-os")
-TF_M_RELATIVE_PATH = "platform/FEATURE_EXPERIMENTAL_API/FEATURE_PSA/TARGET_TFM/TARGET_TFM_LATEST"
+TF_M_RELATIVE_PATH = os.curdir
 sys.path.insert(0, mbed_path)
 TF_M_BUILD_DIR = join(mbed_path, TF_M_RELATIVE_PATH, "TARGET_IGNORE")
 POPEN_INSTANCE = None

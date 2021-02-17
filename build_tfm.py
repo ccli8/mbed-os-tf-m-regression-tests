@@ -220,6 +220,7 @@ def _run_cmake_build(cmake_build_dir, args, tgt, tfm_config):
     logging.info(msg)
 
     cmake_cmd = ["cmake", "../", "-GNinja", "-DTFM_PSA_API=ON"]
+    cmake_cmd.append("-DTFM_ISOLATION_LEVEL=2")
     cmake_cmd.append("-DTFM_PLATFORM=" + tgt[1])
     cmake_cmd.append("-DTFM_TOOLCHAIN_FILE=../toolchain_" + tgt[2] + ".cmake")
     cmake_cmd.append("-DTFM_TEST_REPO_PATH=../../tf-m-tests")
@@ -229,7 +230,6 @@ def _run_cmake_build(cmake_build_dir, args, tgt, tfm_config):
             [
                 "-DTEST_NS=ON",
                 "-DTEST_S=ON",
-                "-DTFM_IRQ_TEST=ON",
                 "-DTFM_PERIPH_ACCESS_TEST=ON",
             ]
         )

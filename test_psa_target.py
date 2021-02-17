@@ -94,7 +94,7 @@ def _build_tfm(args, config, suite=None):
     :param suite: Test suite for PSA compliance
     """
     cmd = [
-        "python3",
+        "python3" if shutil.which("python3") is not None else "python",
         "build_tfm.py",
         "-m",
         args.mcu,

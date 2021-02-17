@@ -19,6 +19,13 @@ extern "C" int tfm_log_printf(const char *fmt, ...)
 
 extern "C" void TIMER1_Handler(void);
 
+/* Disabling '-DTFM_IRQ_TEST=ON' temporarily, we won't have TIMER1_Handler
+ * compiled in and meet link error with it. Add one weak implementation as
+ * workaround. */
+MBED_WEAK void TIMER1_Handler(void)
+{
+}
+
 int main(void)
 {
 #if MBED_CONF_APP_WAIT_FOR_SYNC
